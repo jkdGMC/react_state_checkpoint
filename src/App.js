@@ -10,21 +10,21 @@ class App extends Component {
       imgSrc : "/img/profil.jpg",
       profession : " Web | Software developer"
     },
-    shows : false
+    shows : false,
   };
 
   changeState = () => (this.state.shows) ? this.setState({shows : false}) : this.setState({shows : true});
-  
+
   render() {
-    
     let view
+
     if(this.state.shows){
       view = (
             <div className="profile_container">
-              <img src={this.state.imgSrc} alt="photo de profile" />
-              <h1>{this.state.fullName}</h1>
-              <p>{this.state.bio}</p>
-              <h5>{this.state.profession}</h5>
+              <img src={this.state.Person.imgSrc} alt="photo de profile" />
+              <h1>{this.state.Person.fullName}</h1>
+              <p>{this.state.Person.bio}</p>
+              <h5>{this.state.Person.profession}</h5>
             </div>
       )
     }
@@ -36,7 +36,7 @@ class App extends Component {
         <button name='toggle_button' onClick={this.changeState}>Afficher profile</button>
         {view}
       </div>
-    );
+    )
   }
 }
 
